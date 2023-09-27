@@ -1,9 +1,11 @@
+import { Comment } from "./Comment";
 import { Post } from "./Post";
 import { User } from "./User";
 
 export interface ContextProps{
     users: User[];
     posts: Post[];
+    comments: Comment[];
     loading: boolean;
     error: boolean;
     selectedUser: User | {};

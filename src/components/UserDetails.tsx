@@ -1,12 +1,12 @@
 import React, { useEffect  } from 'react';
 import { ActivityIndicator, View } from 'react-native';
 import styled from "styled-components/native";
-import { UsersContext } from '../../context/UsersContext';
+import { UsersContext } from '../context/UsersContext';
 import { useRoute } from '@react-navigation/native';
-import { UserPosts } from './UserPosts';
 import { ErrorPage } from '../common/ErrorPage';
 import Icon from 'react-native-vector-icons/FontAwesome5';
-import { Wrapper } from './Wrapper';
+import { Wrapper } from '../common/Wrapper';
+import { DataList } from './DataList';
 
 type UserDetailsRouteParams = {
     id: number;
@@ -16,7 +16,7 @@ export const UserDetails: React.FC = () => {
     const route = useRoute();
     const { id } = route.params as UserDetailsRouteParams;
     
-    const { loading, error, selectedUser, loadUserInfo } = React.useContext(UsersContext);
+    const { loading, error, selectedUser, loadUserInfo, posts } = React.useContext(UsersContext);
 
     useEffect(() => loadUserInfo(id), [])
     
@@ -36,7 +36,7 @@ export const UserDetails: React.FC = () => {
                         <TexStyled><Icon name="compass" size={20} color="#fff" /> {selectedUser.company.name}</TexStyled>
                     </TextBlock>
 
-                    <UserPosts/>
+                    <DataList title={`${selectedUser.name} posts`} data={posts} />
                 </View>
             )}
         </Wrapper>

@@ -1,4 +1,4 @@
-import { Wrapper } from "./Wrapper"
+import { Wrapper } from "../common/Wrapper"
 import styled from "styled-components/native";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";

@@ -1,8 +1,9 @@
 import React, { createContext, useCallback, useEffect, useState } from 'react';
-import { User } from '../types/User';
-import { getAllPosts, getCurrentPost, getUserInfo, getUsers } from '../api/api';
-import { Post } from '../types/Post';
-import { ContextProps } from '../types/ContextProps';
+import { User } from '../../types/User';
+import { getAllPosts, getComments, getCurrentPost, getUserInfo, getUsers } from '../api/api';
+import { Post } from '../../types/Post';
+import { ContextProps } from '../../types/ContextProps';
+import { Comment } from '../../types/Comment';
 
 export const UsersContext = createContext<ContextProps>({
     users: [],
@@ -14,6 +15,7 @@ export const UsersContext = createContext<ContextProps>({
     loadUserInfo: () => {},
     loadPostInfo: () => {},
     selectedPost:  {},
+    comments: [],
 });
 
 type Props = {
@@ -29,6 +31,8 @@ export const UsersProvider: React.FC<Props> = ({ children }) => {
 
     const [posts, setPosts] = useState<Post[]>([]);
     const [selectedPost, setSelectedPost] = useState<Post | {}>({});
+
+    const [comments, setComments] = useState<Comment[]>([]);
 
     useEffect(() => {
         getUsers()
@@ -56,6 +60,10 @@ export const UsersProvider: React.FC<Props> = ({ children }) => {
             .then(data => setSelectedPost(data))
             .catch(error => setError(true))
             .finally(() => setLoading(false));
+
+        getComments(id)
+            .then(data => setComments(data))
+            .catch(error => setError(true));
     }, [selectedUser])
 
     const contextValue = {
@@ -68,6 +76,7 @@ export const UsersProvider: React.FC<Props> = ({ children }) => {
         loadUserInfo,
         loadPostInfo,
         selectedPost,
+        comments,
     } 
 
   return (

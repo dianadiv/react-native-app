@@ -2,7 +2,7 @@ import { CommonActions, useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import styled from "styled-components/native";
 import { RootStackParams } from "../../navigation";
-import { Wrapper } from "../components/Wrapper";
+import { Wrapper } from "./Wrapper";
 
 export const ErrorPage = () => {
     const navigation = useNavigation<NativeStackNavigationProp<RootStackParams>>();

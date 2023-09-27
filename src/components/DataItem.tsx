@@ -1,27 +1,28 @@
 import styled from "styled-components/native"
-import { TouchableOpacity, View } from "react-native"
+import { TouchableOpacity } from "react-native"
 import React from "react"
 import { Post } from "../../types/Post"
 import { useNavigation } from "@react-navigation/native"
 import { NativeStackNavigationProp } from "@react-navigation/native-stack"
 import { RootStackParams } from "../../navigation"
+import { Comment } from "../../types/Comment"
 
 type Props = {
-    post: Post
+    item: Post | Comment;
 }
 
-export const PostItem: React.FC<Props> = ({post}) => {
+export const DataItem: React.FC<Props> = ({item}) => {
     const navigation = useNavigation<NativeStackNavigationProp<RootStackParams>>();
     
     const handlePress = () => {
-        navigation.navigate('PostDetails', { id: post.id });
+        ('title' in item) && navigation.navigate('PostDetails', { id: item.id });
     }
 
     return (
         <TouchableOpacity onPress={handlePress}>
             <ViewStyled>
-                <TitleStyled>{post.title}</TitleStyled>
-                <TextStyled numberOfLines={2}>{post.body}</TextStyled>
+                <TitleStyled>{('title' in item) ? item.title : item.name}</TitleStyled>
+                <TextStyled numberOfLines={2}>{item.body}</TextStyled>
             </ViewStyled>
         </TouchableOpacity>
     )

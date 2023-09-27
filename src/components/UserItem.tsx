@@ -13,7 +13,7 @@ type Props = {
   user: User;
 };
 
-export const ListItem: React.FC<Props> = ({user}) => {
+export const UserItem: React.FC<Props> = ({user}) => {
   const { id, name, email } = user;
 
   const navigation =
@@ -39,7 +39,7 @@ export const ListItem: React.FC<Props> = ({user}) => {
 
 const ViewStyled = styled.View`
 margin: 10px;
-padding: 15px 5px;
+padding: 15px;
 
 display: flex;
 flex-direction: row;
