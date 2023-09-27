@@ -73,7 +73,7 @@ const ViewPost = styled.View`
   margin: 10px;
   padding: 10px;
 
-  backgroundcolor: #4d34a7;
+  background-color: #4d34a7;
   border-radius: 10px;
 
   display: flex;

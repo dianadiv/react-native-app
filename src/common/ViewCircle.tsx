@@ -15,7 +15,7 @@ const ViewCircleStyled = styled.View`
   height: 40px;
 
   border-radius: 50px;
-  backgroundcolor: #220540;
+  background-color: #220540;
 
   align-self: center;
   display: flex;

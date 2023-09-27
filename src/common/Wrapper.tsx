@@ -10,7 +10,7 @@ export const Wrapper: React.FC<Props> = ({ children }) => {
 };
 
 const ViewStyled = styled.View`
-  backgroundcolor: #100f1f;
+  background-color: #100f1f;
   height: 100%;
   padding: 10px;
 `;

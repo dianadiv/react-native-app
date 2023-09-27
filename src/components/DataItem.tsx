@@ -29,7 +29,7 @@ export const DataItem: React.FC<Props> = ({ item }) => {
 };
 
 const ViewStyled = styled.View`
-  backgroundcolor: #4d34a7;
+  background-color: #4d34a7;
   margin-vertical: 10px;
   border-radius: 10px;
 `;

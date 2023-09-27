@@ -22,15 +22,16 @@ export const Home: React.FC = () => {
 };
 
 const TextStyled = styled.Text`
-  color: #fff;
+  color:white;
   text-align: center;
   font-size: 23px;
   margin: 20px;
 `;
 
 const TouchableOpacityStyled = styled.TouchableOpacity`
-  backgroundcolor: #4d34a7;
+  background-color: #4d34a7;
   border-radius: 10px;
   width: 50%;
   margin: 0px auto;
 `;
+

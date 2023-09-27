@@ -29,7 +29,7 @@ const TextStyled = styled.Text`
 `;
 
 const TouchableOpacityStyled = styled.TouchableOpacity`
-  backgroundcolor: #4d34a7;
+  background-color: #4d34a7;
   border-radius: 10px;
   width: 50%;
   margin: 0px auto;

@@ -44,7 +44,7 @@ const ViewStyled = styled.View`
   flex-direction: row;
   align-items: center;
 
-  backgroundcolor: #4d34a7;
+  background-color: #4d34a7;
   border-radius: 10px;
 `;
 
