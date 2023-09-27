@@ -4,12 +4,10 @@
  *
  * @format
  */
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 
 import { MainNavigation } from './navigation';
 import { UsersProvider } from './src/context/UsersContext';
-
 
 function App() {
   return (
@@ -18,6 +16,5 @@ function App() {
     </UsersProvider>
   );
 }
-
 
 export default App;
